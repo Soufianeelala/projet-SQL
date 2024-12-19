@@ -17,7 +17,7 @@ if(isset($_POST['titre']) && isset($_POST['duree'])&& isset($_POST['date'])&& is
         
         if(in_array($imageExt,$autorizedExt)){
             $uniqueName = time() . rand(1,1000) . "." . $imageExt;
-            move_uploaded_file($_FILES['image']['tmp_name'],"assets/img/".$uniqueName);
+            move_uploaded_file($_FILES['image']['tmp_name'],"assets/img/".$uniqueName); 
         }
 
     echo $duree;
@@ -31,7 +31,7 @@ if(isset($_POST['titre']) && isset($_POST['duree'])&& isset($_POST['date'])&& is
         'titre' =>$titre,
          'date' =>$date ,
          'duree'=>$duree ,
-         'image'=>$image 
+         'image'=>$uniqueName
         ]);
 }
 }
